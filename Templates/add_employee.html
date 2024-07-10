@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/bulma/bulma.css">
+    <title>Add Employee</title>
+</head>
+<body>
+  <form action="/add-form2" method="POST"
+  <section class="has-text-centered has-background-info-dark is-bold">
+    <div class="hero-body">
+      <p class="title">EMPLOYEE INFORMATION SYSTEM</p>
+      <p class="subtitle">TRONGCO,ANGELICA D.</p>
+    </div>
+  </section>
+
+  <div class="columns mt-4 is-centered">
+    <div class="column is-2">
+        <aside class="menu has-background-info-light">
+            <ul class="menu-list">
+                <li><a class="has-text-black" href="/employee-list" aria-label="Back to Employee List"> Back </a></li>
+                <li><a class="has-text-black" href="/" aria-label="Log out"> Log out </a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <div class="column is-10">
+        <div style="width: 500px;" class="container">
+            <h1 class="has-background-info-light has-text-weight-bold has-text-centered is-size-3">Add Employee</h1>
+            <form class="box has-background-warning-light" id="addEmployeeForm">
+                <div class="field">
+                  <label class="label" for="emp_id">Employee ID</label>
+                  <div class="control">
+                    <input class="input" type="text" name="emp_id" required aria-label="Employee ID" />
+                  </div>
+                </div>
+              
+                <div class="field">
+                  <label class="label" for="lname">Last Name</label>
+                  <div class="control">
+                    <input class="input" type="text" name="lname" required aria-label="Last Name" />
+                  </div>
+                </div>
+        
+                <div class="field">
+                    <label class="label" for="fname">First Name</label>
+                    <div class="control">
+                      <input class="input" type="text" name="fname" required aria-label="First Name" />
+                    </div>
+                  </div>
+        
+                  <div class="field">
+                    <label class="label" for="mname">Middle Name</label>
+                    <div class="control">
+                      <input class="input" type="text" name="mname" aria-label="Middle Name" />
+                    </div>
+                  </div>
+                    <div class="field is-grouped">
+                      <div class="control">
+                          <button type="submit" class="button is-primary has-background-link-dark" aria-label="Add Employee">Add</button>
+                      </div>
+                      <div class="control">
+                          <button type="reset" class="button is-primary has-background-link-dark" aria-label="Reset Form">Reset</button>
+                      </div>
+                  </div>
+              </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('addEmployeeForm');
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            // Gather form data
+            const employeeId = document.getElementById('employeeId').value;
+            const lastName = document.getElementById('lastName').value;
+            const firstName = document.getElementById('firstName').value;
+            const middleName = document.getElementById('middleName').value;
+            const position = document.getElementById('position').value;
+            // Perform validation and save the employee data
+            // Add your backend integration and feedback mechanism here
+            console.log('Employee added:', { employeeId, lastName, firstName, middleName, position });
+            // Reset the form
+            form.reset();
+        });
+    </script>
+</body>
+</html>
